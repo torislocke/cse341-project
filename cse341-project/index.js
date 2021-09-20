@@ -28,6 +28,7 @@ const prove02Routes = require('./routes/prove02-routes');
 
 app
   .use(express.static(path.join(__dirname, 'public')))
+  .use(compression()) // compress for Heroku
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   // For view engine as Pug
