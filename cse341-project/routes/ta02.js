@@ -28,8 +28,8 @@ router.get('/', (req, res, next) => {
     title: 'Team Activity 02',
     users: userArray,
     path: '/ta02', // For pug, EJS
-    // activeTA03: true, // For HBS
-    // contentCSS: true, // For HBS
+    activeTA02: true, // For HBS
+    contentCSS: true, // For HBS
   });
 });
 

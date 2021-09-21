@@ -1,25 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
-
-<head>
-  <% include ../includes/header.ejs %>
-</head>
-
-<body>
-  <% include ../includes/nav.ejs %>
+  <head>
+    <% include ../includes/header.ejs %>
+  </head>
+  
+  <body>
+    <% include ../includes/nav.ejs %>
     <div class="jumbotron text-center">
       <div class="container">
         <h1>
           <%= title %>
         </h1>
-        <p>Prove Two Assignment</p>
       </div>
     </div>
-    <div class="container">
 
+        <!-- Start of Requirement to delete book -->
+        <form action="/prove02/removeBook" method="POST">
+          <label for="removeBook">Book title to remove</label><br>
+          <input type="text" name="removeBook">
+          <button type="submit">Remove Book</button>
+        </form>
+        <!-- End of Requirement to delete book -->
+      </div>
+      <div>
+        <!-- Loop through Book Title's -->
+        <h2>Books:</h2>
+        <% for(book of books) { %>
+          <p>
+            <%= book %>
+          </p>
+          <% } %>
+            <!-- End of Loop -->
+      </div>
     </div>
-
-
 </body>
 
 </html>
