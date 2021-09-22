@@ -24,7 +24,7 @@ router.post('/add-product', (req, res, next) => {
 
 router.get('/', (req, res, next) => {
   const products = adminData.products;
-  res.render('shop', {
+  res.render('prove02', {
     prods: products,
     pageTitle: 'Shop',
     path: '/',
