@@ -20,7 +20,7 @@ router.post('/removeUser', (req, res, next) => { // Requirement 03 of TA02
     userArray.splice(index, 1);
   }
 
-  res.redirect('/ta02/');
+  res.redirect('/ta02');
 });
 
 router.get('/', (req, res, next) => {

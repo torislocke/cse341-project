@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-US">
-  <head>
-    <% include ../includes/header.ejs %>
-  </head>
-  
-  <body>
-    <% include ../includes/nav.ejs %>
-    <div class="jumbotron text-center">
-      <div class="container">
-        <h1>
-          <%= title %>
-        </h1>
-      </div>
-    </div>
 
-        <!-- Start of Requirement to delete book -->
-        <form action="/prove02/removeBook" method="POST">
-          <label for="removeBook">Book title to remove</label><br>
-          <input type="text" name="removeBook">
-          <button type="submit">Remove Book</button>
-        </form>
-        <!-- End of Requirement to delete book -->
-      </div>
-      <div>
-        <!-- Loop through Book Title's -->
-        <h2>Books:</h2>
-        <% for(book of books) { %>
-          <p>
-            <%= book %>
-          </p>
-          <% } %>
-            <!-- End of Loop -->
-      </div>
-    </div>
+<head>
+  <% include ../includes/header.ejs %>
+</head>
+
+<body>
+  <% include ../includes/nav.ejs %>
+  <main>
+    <% if (prods.length > 0) { %>
+        <div class="grid">
+            <% for (let product of prods) { %>
+                <article class="card product-item">
+                    <header class="card__header">
+                        <h1 class="product__title"><%= product.title %></h1>
+                    </header>
+                    <div class="card__image">
+                        <img src="https://cdn.pixabay.com/photo/2015/11/19/21/10/glasses-1052010_1280.jpg"
+                            alt="A Book">
+                    </div>
+                    <div class="card__content">
+                        <h2 class="product__price">$19.99</h2>
+                        <p class="product__description">A very interesting book about so many even more interesting things!</p>
+                    </div>
+                    <div class="card__actions">
+                        <button class="btn">Add to Cart</button>
+                    </div>
+                </article>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>No Products Found!</h1>
+    <% } %>
+</main>
 </body>
 
 </html>
